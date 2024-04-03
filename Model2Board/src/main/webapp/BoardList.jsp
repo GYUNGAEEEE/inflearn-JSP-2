@@ -10,6 +10,18 @@
 </head>
 <body>
 
+<c:if test="${ msg == 1 }">
+	<script>
+		alert("수정불가: 비밀번호가 틀렸습니다.");
+	</script>
+</c:if>
+
+<c:if test="${ msg == 2 }">
+	<script>
+		alert("삭제불가: 비밀번호가 틀렸습니다.");
+	</script>
+</c:if>
+
 <center>
 <h2> 전체 게시글 보기 </h2>
 <table width="700" border="1">

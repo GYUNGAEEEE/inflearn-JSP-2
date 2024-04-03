@@ -9,9 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/BoardReWriteCon.do")
-public class BoardReWriteCon extends HttpServlet {
-	
+import model.BoardBean;
+import model.BoardDAO;
+
+@WebServlet("/BoardDeleteCon.do")
+public class BoardDeleteCon extends HttpServlet {
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		reqPro(request, response);
 	}
@@ -19,19 +22,20 @@ public class BoardReWriteCon extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		reqPro(request, response);
 	}
-
+	
 	protected void reqPro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int ref = Integer.parseInt(request.getParameter("ref"));
-		int re_step = Integer.parseInt(request.getParameter("re_step"));
-		int re_level = Integer.parseInt(request.getParameter("re_level"));
+		int num = Integer.parseInt(request.getParameter("num"));
 		
-		request.setAttribute("ref", ref);
-		request.setAttribute("re_step", re_step);
-		request.setAttribute("re_level", re_level);
+		//데이터베이스에 접근하여 하나의 게시글을 리턴하는 메서드(패스워드 값을 가져오기 위함)
+		//BoardInfo.jsp에서 num값과 함께 password값을 전달했다면 생략 가능
+		BoardDAO bdao = new BoardDAO();
+		BoardBean bean = bdao.getOneUpdateBoard(num);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("BoardReWriteForm.jsp");
+		request.setAttribute("bean", bean);
+		
+		RequestDispatcher dis = request.getRequestDispatcher("BoardDeleteForm.jsp");
 		dis.forward(request, response);
 	}
-	
+
 }

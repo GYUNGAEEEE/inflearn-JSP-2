@@ -13,7 +13,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/user/Documents/GitHub/inflearn-JSP-2/Model2Board/src/main/webapp/WEB-INF/lib/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Documents/GitHub/inflearn-JSP-2/Model2Board/src/main/webapp/WEB-INF/lib/ojdbc11.jar"/>
+	<classpathentry kind="lib" path="C:/webStudy/wk/Model2Board/src/main/webapp/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/webStudy/wk/Model2Board/src/main/webapp/WEB-INF/lib/ojdbc11.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
